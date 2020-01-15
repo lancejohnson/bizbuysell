@@ -64,6 +64,8 @@ def filter_objects_and_write_to_csv(object_list, outfile):
     df_filtered = df_ints[
         (df_ints["Multiple"].between(0.75, 5)) & (df_ints["Cash Flow"] > 500000) & df_ints.state.isin(states)]
 
+    num_filtered_listings = len(df_filtered)
+    print(f"{num_filtered_listings} listings to contact")
     # When writing a new CSV
     # df_filtered.to_csv(outfile)
 
